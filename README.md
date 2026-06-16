@@ -37,7 +37,7 @@ This project combines a React frontend and FastAPI backend to provide real-time 
 
 ## 📸 Application Preview
 
-![Dashboard](images/dashboard.png)
+[![Dashboard](images/dashboard.png)](https://github.com/user-attachments/assets/49ad1882-58bf-4b3e-abf9-b386a2ed4079)
 
 ## 🧠 Model Performance
 
