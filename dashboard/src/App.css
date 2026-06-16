@@ -1,0 +1,246 @@
+/* frontend/src/App.css - Basic Styles for the Dark Theme Dashboard */
+
+:root {
+    --bg-color: #1a1a2e;
+    --card-bg: #202340;
+    --text-color: #f0f0f0;
+    --primary-color: #4CAF50; /* Stable green */
+    --danger-color: #e74c3c; /* Unstable red */
+    --warning-color: #f1c40f;
+    --border-color: #3e3e60;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dashboard-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- Header --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.live-status {
+    color: var(--primary-color);
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.pause-btn {
+    background-color: var(--danger-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Grid Layout --- */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 1.5fr; /* Based on your image */
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* --- Real-Time Inputs --- */
+.real-time-inputs h4 {
+    color: #99aaff;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 1.1rem;
+}
+.input-row:last-of-type { border-bottom: none; }
+
+
+/* --- Model Prediction --- */
+.model-prediction {
+    text-align: center;
+}
+
+.status-box {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.status-unstable {
+    background-color: var(--danger-color);
+}
+
+.status-stable {
+    background-color: var(--primary-color);
+}
+
+.confidence-level h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.progress-bar-container {
+    background-color: var(--border-color);
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0 25px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.status-indicator p {
+    margin: 5px 0;
+}
+.text-red { color: var(--danger-color); }
+.text-green { color: var(--primary-color); }
+
+
+/* --- System Alerts --- */
+.system-alerts h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alerts-list {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.alert-item {
+    background-color: #303358;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--warning-color);
+}
+
+.alert-item p {
+    margin: 5px 0 0 0;
+}
+
+.alert-item .severity {
+    float: right;
+    font-weight: bold;
+    color: var(--warning-color);
+}
+
+/* --- AI Assistant --- */
+.ai-assistant {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-window {
+    flex-grow: 1;
+    min-height: 120px;
+    max-height: 120px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.ai-message {
+    background-color: #1a1a2e;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.time-stamp {
+    display: block;
+    text-align: right;
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.quick-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quick-question-btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: 1px solid #555;
+    padding: 8px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+.quick-question-btn:hover {
+    background-color: #555;
+}
+
+.input-box {
+    display: flex;
+}
+
+.input-box input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #1a1a2e;
+    color: var(--text-color);
+}
+
+.input-box button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
